@@ -1,0 +1,56 @@
+body {
+	background-color: gray;
+}
+
+.verseWord {
+	display: inline-block;
+	background-color: white;
+	color: green;
+	font-weight: bold;
+	font-size: 28px;
+	border: 3px solid black;
+	border-radius: 3px;
+	margin: 5px;
+	padding: 5px;
+}
+
+.error {
+	background-color: #ffffff;
+	color: #ff2222;
+}
+
+.home-input {
+	min-width: 8em;
+}
+
+.jumbotron {
+	margin: 10px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.jumbotron-answer {
+	padding: 20px;
+}
+
+#wordBank, #answerSpace {
+	background-image: url(../img/old_paper_background.jpg);
+	border: solid #000 2px;
+}
+
+.scrambleWord {
+	margin-right: 1px;
+	margin-left: 1px;
+	margin-bottom: 4px;
+	background-image: url(../img/old_paper.jpg);
+	font-weight: bold;
+	color: #000;
+}
+
+#submit {
+	min-width: 4em;
+}
+
+#solution {
+	display: none;
+}
