@@ -8,10 +8,13 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.joshwithee.service.VerseParser;
+import com.joshwithee.util.VerseScramblerBootUtil;
 
 public class VerseParserTest {
 
 	public VerseParser vp = new VerseParser();
+
+	public VerseScramblerBootUtil util = new VerseScramblerBootUtil();
 
 	@Before
 	public void setup() {
@@ -32,7 +35,7 @@ public class VerseParserTest {
 		a.add("");
 		a.add("   .   ");
 		a.add(" ");
-		VerseParser.removeBlanksFromArrayList(a);
+		util.removeBlanksFromArrayList(a);
 		assertEquals(1, a.size());
 	}
 
@@ -43,7 +46,7 @@ public class VerseParserTest {
 		a.add("");
 		a.add("   .   ");
 		a.add(" ");
-		VerseParser.trimStringsInArrayList(a);
+		util.trimStringsInArrayList(a);
 		String r = "";
 		for (String s : a) {
 			r += s;

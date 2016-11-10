@@ -27,6 +27,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.joshwithee.model.HomeForm;
 import com.joshwithee.service.ESVService;
 import com.joshwithee.service.VerseParser;
+import com.joshwithee.util.VerseScramblerBootUtil;
 
 @Controller
 public class WelcomeController {
@@ -42,10 +43,13 @@ public class WelcomeController {
 	// }
 
 	@Autowired
-	private ESVService esvService = new ESVService();
+	private ESVService esvService;
 
 	@Autowired
-	private VerseParser verseParser = new VerseParser();
+	private VerseParser verseParser;
+
+	@Autowired
+	private VerseScramblerBootUtil util;
 
 	@RequestMapping({ "", "/", "/home" })
 	public String startHome(Model model, HttpServletRequest request) {
@@ -85,7 +89,7 @@ public class WelcomeController {
 		request.setAttribute("parsedVerse", parsedVerse);
 
 		if (parsedVerse.length > 1) {
-			String[] scrambledVerse = verseParser.scrambleItems(parsedVerse);
+			String[] scrambledVerse = util.scrambleItems(parsedVerse);
 			request.setAttribute("scrambledVerse", scrambledVerse);
 		} else {
 			request.setAttribute("scrambledVerse", parsedVerse);

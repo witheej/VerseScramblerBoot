@@ -1,19 +1,24 @@
 package com.joshwithee.service;
 
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.joshwithee.util.VerseScramblerBootUtil;
 
 @Service
 public class VerseParser {
 
-	//The ESV API returns verses with verse numbers in square brackets and "ESV" at the end. 
-	//This method removes those. 
+	@Autowired
+	VerseScramblerBootUtil util;
+
+	// The ESV API returns verses with verse numbers in square brackets and
+	// "ESV" at the end.
+	// This method removes those.
 	public String cleanVerse(String verse) {
-		return verse.replaceAll("\\[\\d+(:\\d+)?\\]", "").replaceAll("\\s*\\(ESV\\)", "").replaceAll("\\s+", " ").trim();
+		return verse.replaceAll("\\[\\d+(:\\d+)?\\]", "").replaceAll("\\s*\\(ESV\\)", "").replaceAll("\\s+", " ")
+				.trim();
 	}
 
 	public String[] arrayifySingleVerse(String verse) {
@@ -22,7 +27,7 @@ public class VerseParser {
 		return items;
 	}
 
-	//This method arrayifies a verse, putting n words in each string
+	// This method arrayifies a verse, putting n words in each string
 	public String[] arrayifySingleVerse(String verse, int n) {
 
 		System.out.println(verse);
@@ -31,7 +36,7 @@ public class VerseParser {
 		System.out.println("Length of string array: " + parts.length);
 		for (int i = 0; i < parts.length; i = i + 1) {
 			System.out.println("==" + parts[i] + "==");
-			
+
 		}
 
 		ArrayList<String> listItems = new ArrayList<String>();
@@ -60,9 +65,9 @@ public class VerseParser {
 			listItems.add(temp2);
 		}
 		System.out.println(listItems.toString());
-		trimStringsInArrayList(listItems);
+		util.trimStringsInArrayList(listItems);
 		System.out.println(listItems.toString());
-		removeBlanksFromArrayList(listItems);
+		util.removeBlanksFromArrayList(listItems);
 		System.out.println(listItems.toString());
 		for (int i = 0; i < listItems.size(); i++) {
 			System.out.println("---" + listItems.get(i) + "---");
@@ -70,41 +75,6 @@ public class VerseParser {
 		String[] items = listItems.toArray(new String[listItems.size()]);
 		return items;
 
-	}
-
-	//Scrambles an array of Strings
-	public String[] scrambleItems(String[] items) {
-		String[] result = new String[items.length];
-		Random rnd = ThreadLocalRandom.current();
-		String temp;
-		int j;
-		for (int i = 0; i < items.length; i++) {
-			result[i] = items[i];
-		}
-		for (int i = 0; i < items.length; i++) {
-			temp = result[i];
-			j = rnd.nextInt(items.length - 1);
-			result[i] = result[j];
-			result[j] = temp;
-		}
-		return result;
-	}
-
-	//This is almost certainly no longer needed
-	public static void removeBlanksFromArrayList(ArrayList<String> a) {
-		Iterator<String> iter = a.iterator();
-		while (iter.hasNext()) {
-			if (iter.next().matches("\\s*")) {
-				iter.remove();
-			}
-		}
-	}
-	
-	//This is almost certainly no longer needed
-	public static void trimStringsInArrayList(ArrayList<String> a) {
-		for (int i = 0; i < a.size(); i++) {
-		    a.set(i, a.get(i).trim());
-		}
 	}
 
 }
