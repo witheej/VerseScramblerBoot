@@ -2,6 +2,11 @@ body {
 	background-color: gray;
 }
 
+select {
+	padding: 0px;
+	margin: 0px;
+}
+
 .verseWord {
 	display: inline-block;
 	background-color: white;

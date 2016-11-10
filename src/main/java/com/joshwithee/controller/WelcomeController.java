@@ -23,6 +23,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.joshwithee.model.HomeForm;
 import com.joshwithee.service.ESVService;
@@ -67,19 +68,37 @@ public class WelcomeController {
 		int verse = submittedVerse.getVerse();
 		String mode = submittedVerse.getMode();
 		int groupSize = setDifficulty(mode);
+		String gameMode = submittedVerse.getGameMode();
+
+		System.out.println("gameMode: " + gameMode);
+		System.out.println("book: " + book);
+		System.out.println("chapter: " + chapter);
 
 		String verseText = "";
-		try {
-			verseText += esvService.getPassage(book, chapter + ":" + verse);
-		} catch (Exception e) {
-			e.printStackTrace();
+		if ("cc".equals(gameMode)) {
+			try {
+				verseText += esvService.getPassage(book, chapter + "");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else {
+			try {
+				verseText += esvService.getPassage(book, chapter + ":" + verse);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 
 		if (verseText.matches("^ERROR.*")) {
 			System.out.println("Method getScrambler says: Invalid reference.");
-			return "redirect:home.html";
+			// return "redirect:home.html";
 		} else {
 			System.out.println("Method getScrambler says: Valid reference.");
+		}
+
+		if ("cc".equals(gameMode)) {
+			System.out.println(verseText);
+			// chapterChallenge(book, chapter, groupSize);
 		}
 
 		String[] parsedVerse = verseParser.arrayifySingleVerse(verseText, groupSize);
@@ -96,6 +115,13 @@ public class WelcomeController {
 		}
 
 		return "scrambler";
+	}
+
+	private ModelAndView chapterChallenge(String book, int chapter, int groupSize) {
+		ModelAndView mv = new ModelAndView();
+
+		return mv;
+
 	}
 
 	private int setDifficulty(String mode) {

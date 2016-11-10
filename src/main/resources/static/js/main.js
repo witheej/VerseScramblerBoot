@@ -7,6 +7,8 @@
 			var $bookSelection = $('#bookSelection');
 			var $chapterSelection = $('#chapterSelection');
 			var $verseSelection = $('#verseSelection');
+			var $chapterChallengeInd = $('#chapterChallengeInd');
+			var $verseSelectionDiv = $('#verseSelectionDiv');
 
 			$bookSelection.val('noBookSelected')
 			$chapterSelection.val("");
@@ -17,6 +19,12 @@
 			$bookSelection.on('change', onBookChange);
 
 			$chapterSelection.on('change', onChapterChange);
+			
+			$chapterChallengeInd.on('change', onChapterChallengeIndChange);
+			
+			function onChapterChallengeIndChange(){
+				$verseSelectionDiv.toggle(!this.checked);
+			}
 
 			function onChapterChange() {
 				if ($bookSelection.val() == "") {

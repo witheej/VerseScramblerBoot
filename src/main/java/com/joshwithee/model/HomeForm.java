@@ -9,6 +9,7 @@ public class HomeForm {
 	private int chapter;
 	private int verse;
 	private String mode;
+	private String gameMode;
 
 	public String getBook() {
 		return book;
@@ -41,6 +42,13 @@ public class HomeForm {
 	public void setMode(String mode) {
 		this.mode = mode;
 	}
-	
-	
+
+	public String getGameMode() {
+		return gameMode;
+	}
+
+	public void setGameMode(String gameMode) {
+		this.gameMode = gameMode;
+	}
+
 }

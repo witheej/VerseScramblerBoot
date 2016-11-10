@@ -21,6 +21,7 @@ public class ESVService {
 		// http://www.esvapi.org/v2/rest/passageQuery?key=IP&passage=John+1&output-format=plain-text&include-headings=false&include-footnotes=false&include-passage-references=false&include-subheadings=false&include-passage-horizontal-lines=false&include-heading-horizontal-lines=false&line-length=0
 
 		URL esvURL = new URL(urlStringBuilder.toString());
+		System.out.println("esvURL: " + esvURL);
 		InputStream esvStream = esvURL.openStream();
 
 		StringBuilder outStringBuilder = new StringBuilder();
