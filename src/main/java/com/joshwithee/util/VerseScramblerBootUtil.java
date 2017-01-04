@@ -27,20 +27,28 @@ public class VerseScramblerBootUtil {
 
 	// Scrambles an array of Strings
 	public String[] scrambleItems(String[] items) {
-		String[] result = new String[items.length];
-		Random rnd = ThreadLocalRandom.current();
-		String temp;
-		int j;
-		for (int i = 0; i < items.length; i++) {
-			result[i] = items[i];
+		if (items.length > 1) {
+			String[] result = new String[items.length];
+			Random rnd = ThreadLocalRandom.current();
+			String temp;
+			int j;
+			for (int i = 0; i < items.length; i++) {
+				result[i] = items[i];
+			}
+			for (int i = 0; i < items.length; i++) {
+				temp = result[i];
+				j = rnd.nextInt(items.length - 1);
+				result[i] = result[j];
+				result[j] = temp;
+			}
+			return result;
+		} else {
+			return items;
 		}
-		for (int i = 0; i < items.length; i++) {
-			temp = result[i];
-			j = rnd.nextInt(items.length - 1);
-			result[i] = result[j];
-			result[j] = temp;
-		}
-		return result;
+	}
+
+	public String lowerCaseNoSpaces(String s) {
+		return s.replaceAll("\\s+", "").toLowerCase();
 	}
 
 }

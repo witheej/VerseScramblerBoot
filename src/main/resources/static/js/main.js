@@ -185,6 +185,7 @@
 			var $submitAnswer = $("#submitAnswer");
 			var $response = $("#response");
 			var $solution = $("#solution");
+			var $scramblerReferenceForm = $("#scramblerReferenceForm");
 
 			//Prevent #wordBank and #answerSpace from expanding/shrinking when words are moved around
 			$answerSpace.height($wordBank.height());
@@ -214,6 +215,25 @@
 				var sol = $solution.text();
 				if (ans.trim() == sol.trim()) {
 					$response.text("Correct!");
+				    bootbox.confirm({
+				        message: "Success! Continue to the next verse?",
+				        buttons: {
+				            confirm: {
+				                label: 'Yes',
+				                className: 'btn-success'
+				            },
+				            cancel: {
+				                label: 'No',
+				                className: 'btn-danger'
+				            }
+				        },
+				        callback: function (result) {
+				            console.log('This was logged in the callback: ' + result);
+				            if(result){
+				            	document.getElementById("homeForm").submit();
+				            }
+				        }
+				    });
 				} else {
 					$response.text("Wrong.");
 				}

@@ -78,10 +78,26 @@ public class BibleInfo {
 		VERSEMAP.put("jude",new int[] {25});
 		VERSEMAP.put("revelation",new int[] {20,29,22,11,14,17,17,13,21,11,19,17,18,20,8,21,18,24,21,15,27,21});
 	}
-	
+
 	public int getChapterVerses(String book, String chapter){
 		String b = book.toLowerCase().replaceAll("\\s+", "");
 		int c = Integer.parseInt(chapter);
-		return VERSEMAP.get(b)[c-1];
+		return VERSEMAP.get(b)[c-1];		
+	}
+	
+	public int getChapterVerses(String book, int chapter){
+		String b = book.toLowerCase().replaceAll("\\s+", "");
+		int c = chapter;
+		return VERSEMAP.get(b)[c-1];		
+	}
+	
+	public int getBookChapters(String book){
+			String b = book.toLowerCase().replaceAll("\\s+", "");
+			return VERSEMAP.get(b).length;
+	}
+	
+	public boolean isBookValid(String book){
+		String b = book.toLowerCase().replaceAll("\\s+", "");
+		return VERSEMAP.containsKey(b);
 	}
 }

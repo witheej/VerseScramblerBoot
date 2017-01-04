@@ -14,9 +14,8 @@ import com.joshwithee.service.ESVService;
 public class AjaxController {
 
 	@Autowired
-	private ESVService esvService = new ESVService();
+	private ESVService esvService;
 
-	@Autowired
 	private BibleInfo bibleInfo = new BibleInfo();
 
 	// @RequestMapping(value = "/versesInChapter")

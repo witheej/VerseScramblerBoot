@@ -23,7 +23,7 @@
 			<div class="container-fluid">
 				<h1>Verse Scrambler!</h1>
 				<p>Enter a verse and click "Submit" to begin.</p>
-				<form:form id="referenceForm" commandName="submittedVerse"
+				<form:form id="referenceForm" commandName="homeForm"
 					action="scrambler">
 					<div class="row">
 						<div class="col-xs-12">

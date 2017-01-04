@@ -14,17 +14,21 @@
 <link rel="stylesheet" href="css/bootstrap.css">
 <script src="js/bootstrap.js"></script>
 <script src="js/main.js"></script>
+<script src="js/bootbox.min.js"></script>
 <link rel="stylesheet" href="css/main.css" type="text/css">
 </head>
 <body>
 	<div class="container">
 		<div class="jumbotron">
 			<div>
+				<h3 id="reference">${reference}</h3>
+				<span id="mode">${mode}</span>
+			</div>
+			<div>
 				<h3>Word Bank:</h3>
 			</div>
 			<div id="wordBank" class="well">
-				<c:forEach items="${scrambledVerse}" var="i">
-					<button class="btn btn-default scrambleWord">${i}</button></c:forEach>
+				<c:forEach items="${scrambledVerse}" var="i"><button class="btn btn-default scrambleWord">${i}</button></c:forEach>
 			</div>
 		</div>
 		<div class="jumbotron jumbotron-answer">
@@ -39,6 +43,17 @@
 			</div>
 		</div>
 	</div>
+
+	<form:form id="homeForm" commandName="homeForm"
+		action="scrambler">
+		<form:input type="hidden" path="mode" value="${mode}" />
+		<form:input type="hidden" id="scramblerBookSelection" name="book"
+			path="book" value="${book}" />
+		<form:input id="scramblerChapterSelection" name="chapter"
+			path="chapter" type="hidden" value="${chapter}" />
+		<form:input id="scramblerVerseSelection" name="verse" path="verse"
+			type="hidden" value="${testing}" />
+	</form:form>
 	<span id="solution"><c:out value="${answerVerse}" /></span>
 </body>
 </html>
