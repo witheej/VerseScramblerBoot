@@ -6,7 +6,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Verse Scrambler Homepage</title>
 <script src="js/jquery.js"></script>
@@ -27,18 +27,19 @@
 					action="scrambler">
 					<div class="row">
 						<div class="col-xs-12">
-							<form:radiobutton path="mode" value="veryeasy" />
-							Very Easy
-							<form:radiobutton path="mode" value="easy" checked="checked" />
-							Easy
-							<form:radiobutton path="mode" value="normal" />
-							Normal
-							<form:radiobutton path="mode" value="hard" />
-							Hard
+							<label class="home-radio"> <form:radiobutton path="mode"
+									value="veryeasy" /> Very Easy
+							</label> <label class="home-radio"> <form:radiobutton path="mode"
+									value="easy" checked="checked" /> Easy
+							</label> <label class="home-radio"> <form:radiobutton path="mode"
+									value="normal" /> Normal
+							</label> <label class="home-radio"> <form:radiobutton path="mode"
+									value="hard" /> Hard
+							</label>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-xs-2 home-input">
+						<div class="col-xs-12 col-md-8 home-input">
 							<label for="bookSelection">Book:<form:select
 									id="bookSelection" name="book" path="book" class="form-control">
 									<option value="noBookSelected">Select A Book</option>
@@ -111,21 +112,21 @@
 									<option value="Revelation">Revelation</option>
 								</form:select></label>
 						</div>
-						<div class="col-xs-2 home-input">
+						<div class="col-xs-12 col-md-6 home-input">
 							<label for="chapterSelection">Chapter:<form:select
 									id="chapterSelection" name="chapter" path="chapter" type="text"
 									class="form-control" disabled="true">
 									<option value="1">1</option>
 								</form:select></label>
 						</div>
-						<div class="col-xs-2 home-input">
+						<div class="col-xs-12 col-md-6 home-input">
 							<label for="verseSelection">Verse:<form:select
 									id="verseSelection" name="verse" path="verse" type="text"
 									class="form-control" disabled="true">
 									<option value="1">1</option>
 								</form:select></label>
 						</div>
-						<div class="col-xs-1">
+						<div class="col-xs-12 col-md-4">
 							<label for="submit">Submit:<input id="submit"
 								name="submit" type="submit" value="Go!"
 								class="form-control btn-primary" /></label>
@@ -133,9 +134,9 @@
 					</div>
 				</form:form>
 			</div>
-<!-- 			<div> -->
-<!-- 				<a href="http://www.joshuawithee.com/walkthrough">Sixteen Verse Walkthrough</a> -->
-<!-- 			</div> -->
+			<!-- 			<div> -->
+			<!-- 				<a href="http://www.joshuawithee.com/walkthrough">Sixteen Verse Walkthrough</a> -->
+			<!-- 			</div> -->
 		</div>
 	</div>
 </body>

@@ -23,6 +23,10 @@ body {
 	min-width: 8em;
 }
 
+.home-radio{
+	margin-right: 10px;
+}
+
 .jumbotron {
 	margin: 10px;
 	padding-top: 20px;

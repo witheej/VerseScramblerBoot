@@ -22,7 +22,6 @@
 		<div class="jumbotron">
 			<div>
 				<h3 id="reference">${reference}</h3>
-				<span id="mode">${mode}</span>
 			</div>
 			<div>
 				<h3>Word Bank:</h3>
