@@ -133,6 +133,9 @@
 					</div>
 				</form:form>
 			</div>
+<!-- 			<div> -->
+<!-- 				<a href="http://www.joshuawithee.com/walkthrough">Sixteen Verse Walkthrough</a> -->
+<!-- 			</div> -->
 		</div>
 	</div>
 </body>

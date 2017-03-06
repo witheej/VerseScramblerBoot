@@ -13,7 +13,7 @@
 	<packaging>war</packaging>
 	<name>Verse Scrambler Boot</name>
 	<description>Verse Scrambler Boot</description>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<url>http://projects.spring.io/spring-boot/</url>
 	<organization>
 		<name>Pivotal Software, Inc.</name>

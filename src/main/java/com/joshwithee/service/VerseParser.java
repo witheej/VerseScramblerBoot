@@ -93,6 +93,38 @@ public class VerseParser {
 		return cleanVerse(verseText);
 	}
 
+	public String getVerseText(String ref) {
+		System.out.println("getVerseText: ref = " + ref);
+		ESVService esvService = new ESVService();
+		String rawBookName = ref.replaceAll("\\d+:\\d+(-\\d+)?", "");
+		System.out.println("getVerseText: rawBookName = " + rawBookName);
+		String chapterAndVerse = ref.replaceAll(rawBookName, "");
+		System.out.println("getVerseText: chapterAndVerse = " + chapterAndVerse);
+		String bookName;
+		if (bibleInfo.ABBREVIATIONMAP.containsKey(rawBookName)) {
+			bookName = bibleInfo.ABBREVIATIONMAP.get(rawBookName);
+		} else {
+			bookName = rawBookName;
+		}
+		System.out.println("getVerseText: bookName = " + bookName);
+
+		String verseText = "";
+		try {
+			verseText += esvService.getPassage(bookName, chapterAndVerse);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		if (verseText.matches("^ERROR.*")) {
+			System.out.println("Method getVerseText says: Invalid reference.");
+			return "INVALID VERSE REFERENCE";
+		} else {
+			System.out.println("Method getVerseText says: Valid reference.");
+		}
+
+		return verseText;
+	}
+
 	private String getReferenceString(HomeForm hf) {
 		String ref = hf.getBook() + " " + hf.getChapter() + ":" + hf.getVerse();
 

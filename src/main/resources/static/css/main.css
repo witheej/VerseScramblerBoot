@@ -33,6 +33,11 @@ body {
 	padding: 20px;
 }
 
+.tight-padding {
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
 #wordBank, #answerSpace {
 	background-image: url(../img/old_paper_background.jpg);
 	border: solid #000 2px;
