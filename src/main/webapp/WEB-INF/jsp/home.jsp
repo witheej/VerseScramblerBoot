@@ -39,7 +39,7 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-xs-12 col-md-8 home-input">
+						<div class="col-xs-12 col-sm-4 home-input">
 							<label for="bookSelection">Book:<form:select
 									id="bookSelection" name="book" path="book" class="form-control">
 									<option value="noBookSelected">Select A Book</option>
@@ -112,21 +112,21 @@
 									<option value="Revelation">Revelation</option>
 								</form:select></label>
 						</div>
-						<div class="col-xs-12 col-md-6 home-input">
+						<div class="col-xs-12 col-sm-3 home-input">
 							<label for="chapterSelection">Chapter:<form:select
 									id="chapterSelection" name="chapter" path="chapter" type="text"
 									class="form-control" disabled="true">
 									<option value="1">1</option>
 								</form:select></label>
 						</div>
-						<div class="col-xs-12 col-md-6 home-input">
+						<div class="col-xs-12 col-sm-3 home-input">
 							<label for="verseSelection">Verse:<form:select
 									id="verseSelection" name="verse" path="verse" type="text"
 									class="form-control" disabled="true">
 									<option value="1">1</option>
 								</form:select></label>
 						</div>
-						<div class="col-xs-12 col-md-4">
+						<div class="col-xs-12">
 							<label for="submit">Submit:<input id="submit"
 								name="submit" type="submit" value="Go!"
 								class="form-control btn-primary" /></label>

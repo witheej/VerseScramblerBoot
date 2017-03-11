@@ -12,6 +12,7 @@
 <script src="js/jquery-ui.js"></script>
 <link rel="stylesheet" href="css/jquery-ui.css">
 <link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
 <script src="js/bootstrap.js"></script>
 <script src="js/main.js"></script>
 <script src="js/bootbox.min.js"></script>
@@ -21,10 +22,14 @@
 	<div class="container">
 		<div class="jumbotron">
 			<div>
+				<a id="returnHome" class="btn btn-default" href="home"><i class="fa fa-arrow-left" aria-hidden="true"></i>
+				 Back to verse selection</a>
+			</div>
+			<div>
 				<h3 id="reference">${reference}</h3>
 			</div>
 			<div>
-				<h3>Word Bank:</h3>
+				<h4>Word Bank:</h4>
 			</div>
 			<div id="wordBank" class="well">
 				<c:forEach items="${scrambledVerse}" var="i"><button class="btn btn-default scrambleWord">${i}</button></c:forEach>
@@ -32,7 +37,7 @@
 		</div>
 		<div class="jumbotron jumbotron-answer">
 			<div>
-				<h3>Your Answer:</h3>
+				<h4>Answer:</h4>
 			</div>
 			<div id="answerSpace" class="well"></div>
 			<div>
