@@ -38,7 +38,17 @@ public class WelcomeController {
 	@Autowired
 	private VerseParser verseParser;
 
-	@RequestMapping({ "", "/", "/home" })
+	@RequestMapping({ "", "/" })
+	public String root() {
+		return "redirect:home";
+	}
+
+	@RequestMapping("/login")
+	public String startHome() {
+		return "login";
+	}
+
+	@RequestMapping("/home")
 	public String startHome(Model model, HttpServletRequest request) {
 		HomeForm form = new HomeForm();
 		model.addAttribute("homeForm", form);
