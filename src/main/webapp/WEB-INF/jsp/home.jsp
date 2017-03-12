@@ -18,9 +18,8 @@
 <link rel="stylesheet" href="css/main.css" type="text/css">
 </head>
 <body>
-	<div class="container-fluid">
+	<div class="container">
 		<div class="jumbotron">
-			<div class="container-fluid">
 				<h1>Verse Scrambler!</h1>
 				<p>Enter a verse and click "Submit" to begin.</p>
 				<form:form id="referenceForm" commandName="homeForm"
@@ -39,7 +38,7 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-xs-12 col-sm-4 home-input">
+						<div class="col-xs-12 col-sm-4 col-md-3 home-input">
 							<label for="bookSelection">Book:<form:select
 									id="bookSelection" name="book" path="book" class="form-control">
 									<option value="noBookSelected">Select A Book</option>
@@ -112,14 +111,14 @@
 									<option value="Revelation">Revelation</option>
 								</form:select></label>
 						</div>
-						<div class="col-xs-12 col-sm-3 home-input">
+						<div class="col-xs-12 col-sm-3 col-md-2 home-input">
 							<label for="chapterSelection">Chapter:<form:select
 									id="chapterSelection" name="chapter" path="chapter" type="text"
 									class="form-control" disabled="true">
 									<option value="1">1</option>
 								</form:select></label>
 						</div>
-						<div class="col-xs-12 col-sm-3 home-input">
+						<div class="col-xs-12 col-sm-3 col-md-2 home-input">
 							<label for="verseSelection">Verse:<form:select
 									id="verseSelection" name="verse" path="verse" type="text"
 									class="form-control" disabled="true">
@@ -133,7 +132,6 @@
 						</div>
 					</div>
 				</form:form>
-			</div>
 			<!-- 			<div> -->
 			<!-- 				<a href="http://www.joshuawithee.com/walkthrough">Sixteen Verse Walkthrough</a> -->
 			<!-- 			</div> -->

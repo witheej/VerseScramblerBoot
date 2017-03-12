@@ -41,7 +41,7 @@
 			</div>
 			<div id="answerSpace" class="well"></div>
 			<div>
-				<button id="submitAnswer" class="btn btn-success">Submit!</button>
+				<button id="submitAnswer" class="btn btn-success">Submit</button>
 				<button id="clearAll" class="btn btn-danger">Clear All</button>
 				<span id="response"></span>
 			</div>

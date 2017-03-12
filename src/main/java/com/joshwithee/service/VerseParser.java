@@ -28,6 +28,7 @@ public class VerseParser {
 	}
 
 	public String getScriptureReference(HomeForm hf) {
+		System.out.println("VerseParser.getScriptureReference is returning: " + hf.getBook() + " " + hf.getChapter() + ":" + hf.getVerse());
 		return hf.getBook() + " " + hf.getChapter() + ":" + hf.getVerse();
 	}
 

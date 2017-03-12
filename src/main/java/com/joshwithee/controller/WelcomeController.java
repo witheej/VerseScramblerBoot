@@ -47,6 +47,10 @@ public class WelcomeController {
 
 	@RequestMapping(value = "/scrambler")
 	public String getScrambler(Model model, @ModelAttribute("homeForm") HomeForm homeForm, HttpServletRequest request) {
+		if (homeForm.getChapter() == 0 || homeForm.getVerse() == 0
+				|| "noBookSelected".equals(homeForm.getBook() + "")) {
+			return "redirect:home";
+		}
 		request.setAttribute("reference", verseParser.getScriptureReference(homeForm));
 		request.setAttribute("mode", homeForm.getMode());
 		request.setAttribute("answerVerse", verseParser.getAnswerText(homeForm));
@@ -97,18 +101,6 @@ public class WelcomeController {
 		}
 
 		request.setAttribute("AndrewVerses", arr);
-
-		// String avr = (String) request.getAttribute("andrew-verse-refs");
-		// String nws = avr.replaceAll("\\s+", "");
-		// String[] spob = nws.split("\\.");
-		// for(String s : spob){
-		//
-		// }
-		// ArrayList<String> splitOnBooks = new ArrayList<String>();
-		// if(nws.length() - nws.replaceAll("\\.", "").length() > 0){
-		//
-		// }
-		//
 
 		return "andrew";
 	}
