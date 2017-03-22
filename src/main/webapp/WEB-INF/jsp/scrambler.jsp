@@ -20,7 +20,7 @@
 </head>
 <body>
 	<div class="container">
-		<div class="jumbotron">
+		<div class="jumbotron jumbotron-wordbank">
 			<div>
 				<a id="returnHome" class="btn btn-default" href="home"><i class="fa fa-arrow-left" aria-hidden="true"></i>
 				 Back to verse selection</a>
