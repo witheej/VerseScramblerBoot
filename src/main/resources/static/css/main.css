@@ -23,8 +23,12 @@ body {
 	min-width: 8em;
 }
 
-.home-radio{
+.home-radio {
 	margin-right: 10px;
+}
+
+#go-button-div {
+	margin-top: 10px;
 }
 
 .jumbotron {
@@ -33,8 +37,12 @@ body {
 	padding-bottom: 20px;
 }
 
+.jumbotron-wordbank {
+	padding-bottom: 2px;
+}
+
 .jumbotron-answer {
-	padding: 20px;
+	padding-top: 2px;
 }
 
 .tight-padding {
