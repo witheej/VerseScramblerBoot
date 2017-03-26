@@ -16,4 +16,4 @@ phases:
       - echo Build completed on `date`
 artifacts:
   files:
-    - target/VerseScramblerBoot-0.1.1.war
+    - target/com.joshwithee-0.0.8-SNAPSHOT.war
