@@ -81,7 +81,6 @@
 									<option value="Haggai">Haggai</option>
 									<option value="Zechariah">Zechariah</option>
 									<option value="Malachi">Malachi</option>
-									<option value="New Testament">New Testament</option>
 									<option value="Matthew">Matthew</option>
 									<option value="Mark">Mark</option>
 									<option value="Luke">Luke</option>
